@@ -1,0 +1,20 @@
+name: Make
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  make:
+    name: Make
+    runs-on: ubuntu-24.04
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Upload
+      uses: actions/upload-artifact@v4
+      with:
+        name: mado-module
+        path: .
